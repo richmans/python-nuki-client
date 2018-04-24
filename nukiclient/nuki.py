@@ -47,7 +47,7 @@ class Nuki():
     def wrapper(self, *args, **kwargs):
       self._make_ble_connection()
       try:
-        func(self, *args, **kwargs)
+        return func(self, *args, **kwargs)
       except Exception as err:
         self._close_ble_connection()
         raise err
